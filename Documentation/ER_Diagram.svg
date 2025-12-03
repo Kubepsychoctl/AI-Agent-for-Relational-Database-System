@@ -1,0 +1,291 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666"/>
+    </marker>
+    <marker id="one" markerWidth="20" markerHeight="20" refX="0" refY="10" orient="auto">
+      <line x1="0" y1="5" x2="0" y2="15" stroke="#666" stroke-width="2"/>
+    </marker>
+    <marker id="many" markerWidth="20" markerHeight="20" refX="0" refY="10" orient="auto">
+      <path d="M0,10 L10,5 M0,10 L10,15 M0,10 L10,10" stroke="#666" stroke-width="1.5" fill="none"/>
+    </marker>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#2563EB"/>
+    </linearGradient>
+    <linearGradient id="pkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FEF3C7"/>
+      <stop offset="100%" style="stop-color:#FDE68A"/>
+    </linearGradient>
+    <linearGradient id="fkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#D1FAE5"/>
+      <stop offset="100%" style="stop-color:#A7F3D0"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <style>
+    .title { font-family: Arial, sans-serif; font-size: 28px; font-weight: bold; fill: #1E3A8A; }
+    .subtitle { font-family: Arial, sans-serif; font-size: 14px; fill: #6B7280; }
+    .table-header { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: white; }
+    .column-name { font-family: Arial, sans-serif; font-size: 11px; fill: #374151; }
+    .column-type { font-family: Arial, sans-serif; font-size: 10px; fill: #6B7280; }
+    .pk-label { font-family: Arial, sans-serif; font-size: 9px; fill: #92400E; font-weight: bold; }
+    .fk-label { font-family: Arial, sans-serif; font-size: 9px; fill: #065F46; font-weight: bold; }
+    .relation-label { font-family: Arial, sans-serif; font-size: 11px; fill: #4B5563; }
+    .legend-text { font-family: Arial, sans-serif; font-size: 11px; fill: #374151; }
+  </style>
+  
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#F8FAFC"/>
+  
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" class="title">Entity-Relationship Diagram</text>
+  <text x="700" y="60" text-anchor="middle" class="subtitle">IBM HR Analytics Employee Attrition &amp; Performance Database</text>
+  
+  <!-- Legend -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="180" height="70" rx="5" fill="white" stroke="#E5E7EB" filter="url(#shadow)"/>
+    <text x="90" y="18" text-anchor="middle" class="column-name" font-weight="bold">Legend</text>
+    <rect x="10" y="25" width="40" height="14" fill="url(#pkGrad)" stroke="#D97706" rx="2"/>
+    <text x="55" y="36" class="legend-text">Primary Key (PK)</text>
+    <rect x="10" y="45" width="40" height="14" fill="url(#fkGrad)" stroke="#059669" rx="2"/>
+    <text x="55" y="56" class="legend-text">Foreign Key (FK)</text>
+  </g>
+  
+  <!-- Department Table -->
+  <g transform="translate(80, 180)" filter="url(#shadow)">
+    <rect width="180" height="80" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect width="180" height="28" rx="8" fill="url(#headerGrad)"/>
+    <rect y="20" width="180" height="8" fill="url(#headerGrad)"/>
+    <text x="90" y="19" text-anchor="middle" class="table-header">Department</text>
+    <rect x="5" y="35" width="170" height="18" fill="url(#pkGrad)" rx="3"/>
+    <text x="10" y="48" class="column-name">department_id</text>
+    <text x="110" y="48" class="column-type">INT</text>
+    <text x="155" y="48" class="pk-label">PK</text>
+    <text x="10" y="68" class="column-name">department_name</text>
+    <text x="110" y="68" class="column-type">VARCHAR(50)</text>
+  </g>
+  
+  <!-- JobRole Table -->
+  <g transform="translate(350, 180)" filter="url(#shadow)">
+    <rect width="180" height="80" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect width="180" height="28" rx="8" fill="url(#headerGrad)"/>
+    <rect y="20" width="180" height="8" fill="url(#headerGrad)"/>
+    <text x="90" y="19" text-anchor="middle" class="table-header">JobRole</text>
+    <rect x="5" y="35" width="170" height="18" fill="url(#pkGrad)" rx="3"/>
+    <text x="10" y="48" class="column-name">job_role_id</text>
+    <text x="110" y="48" class="column-type">INT</text>
+    <text x="155" y="48" class="pk-label">PK</text>
+    <text x="10" y="68" class="column-name">job_role_name</text>
+    <text x="110" y="68" class="column-type">VARCHAR(50)</text>
+  </g>
+  
+  <!-- Education Table -->
+  <g transform="translate(620, 180)" filter="url(#shadow)">
+    <rect width="180" height="100" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect width="180" height="28" rx="8" fill="url(#headerGrad)"/>
+    <rect y="20" width="180" height="8" fill="url(#headerGrad)"/>
+    <text x="90" y="19" text-anchor="middle" class="table-header">Education</text>
+    <rect x="5" y="35" width="170" height="18" fill="url(#pkGrad)" rx="3"/>
+    <text x="10" y="48" class="column-name">education_id</text>
+    <text x="110" y="48" class="column-type">INT</text>
+    <text x="155" y="48" class="pk-label">PK</text>
+    <text x="10" y="68" class="column-name">education_level</text>
+    <text x="110" y="68" class="column-type">TINYINT</text>
+    <text x="10" y="88" class="column-name">education_field</text>
+    <text x="110" y="88" class="column-type">VARCHAR(30)</text>
+  </g>
+  
+  <!-- Employee Table (Central) -->
+  <g transform="translate(350, 350)" filter="url(#shadow)">
+    <rect width="280" height="280" rx="8" fill="white" stroke="#3B82F6" stroke-width="2"/>
+    <rect width="280" height="28" rx="8" fill="url(#headerGrad)"/>
+    <rect y="20" width="280" height="8" fill="url(#headerGrad)"/>
+    <text x="140" y="19" text-anchor="middle" class="table-header">Employee (Central Entity)</text>
+    <rect x="5" y="35" width="270" height="18" fill="url(#pkGrad)" rx="3"/>
+    <text x="10" y="48" class="column-name">employee_id</text>
+    <text x="180" y="48" class="column-type">INT</text>
+    <text x="250" y="48" class="pk-label">PK</text>
+    <rect x="5" y="55" width="270" height="18" fill="url(#fkGrad)" rx="3"/>
+    <text x="10" y="68" class="column-name">department_id</text>
+    <text x="180" y="68" class="column-type">INT</text>
+    <text x="250" y="68" class="fk-label">FK</text>
+    <rect x="5" y="75" width="270" height="18" fill="url(#fkGrad)" rx="3"/>
+    <text x="10" y="88" class="column-name">job_role_id</text>
+    <text x="180" y="88" class="column-type">INT</text>
+    <text x="250" y="88" class="fk-label">FK</text>
+    <rect x="5" y="95" width="270" height="18" fill="url(#fkGrad)" rx="3"/>
+    <text x="10" y="108" class="column-name">education_id</text>
+    <text x="180" y="108" class="column-type">INT</text>
+    <text x="250" y="108" class="fk-label">FK</text>
+    <text x="10" y="128" class="column-name">age</text>
+    <text x="180" y="128" class="column-type">TINYINT</text>
+    <text x="10" y="148" class="column-name">gender</text>
+    <text x="180" y="148" class="column-type">ENUM</text>
+    <text x="10" y="168" class="column-name">marital_status</text>
+    <text x="180" y="168" class="column-type">ENUM</text>
+    <text x="10" y="188" class="column-name">distance_from_home</text>
+    <text x="180" y="188" class="column-type">TINYINT</text>
+    <text x="10" y="208" class="column-name">over_time</text>
+    <text x="180" y="208" class="column-type">BOOLEAN</text>
+    <text x="10" y="228" class="column-name">attrition</text>
+    <text x="180" y="228" class="column-type">BOOLEAN</text>
+    <text x="10" y="248" class="column-name">business_travel</text>
+    <text x="180" y="248" class="column-type">ENUM</text>
+    <text x="10" y="268" class="column-name">num_companies_worked</text>
+    <text x="180" y="268" class="column-type">TINYINT</text>
+  </g>
+  
+  <!-- Compensation Table -->
+  <g transform="translate(80, 680)" filter="url(#shadow)">
+    <rect width="200" height="180" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect width="200" height="28" rx="8" fill="url(#headerGrad)"/>
+    <rect y="20" width="200" height="8" fill="url(#headerGrad)"/>
+    <text x="100" y="19" text-anchor="middle" class="table-header">Compensation</text>
+    <rect x="5" y="35" width="190" height="18" fill="url(#pkGrad)" rx="3"/>
+    <text x="10" y="48" class="column-name">compensation_id</text>
+    <text x="140" y="48" class="column-type">INT</text>
+    <text x="175" y="48" class="pk-label">PK</text>
+    <rect x="5" y="55" width="190" height="18" fill="url(#fkGrad)" rx="3"/>
+    <text x="10" y="68" class="column-name">employee_id</text>
+    <text x="140" y="68" class="column-type">INT</text>
+    <text x="175" y="68" class="fk-label">FK</text>
+    <text x="10" y="88" class="column-name">monthly_income</text>
+    <text x="140" y="88" class="column-type">INT</text>
+    <text x="10" y="108" class="column-name">daily_rate</text>
+    <text x="140" y="108" class="column-type">SMALLINT</text>
+    <text x="10" y="128" class="column-name">hourly_rate</text>
+    <text x="140" y="128" class="column-type">SMALLINT</text>
+    <text x="10" y="148" class="column-name">percent_salary_hike</text>
+    <text x="140" y="148" class="column-type">TINYINT</text>
+    <text x="10" y="168" class="column-name">stock_option_level</text>
+    <text x="140" y="168" class="column-type">TINYINT</text>
+  </g>
+  
+  <!-- JobHistory Table -->
+  <g transform="translate(400, 680)" filter="url(#shadow)">
+    <rect width="200" height="180" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect width="200" height="28" rx="8" fill="url(#headerGrad)"/>
+    <rect y="20" width="200" height="8" fill="url(#headerGrad)"/>
+    <text x="100" y="19" text-anchor="middle" class="table-header">JobHistory</text>
+    <rect x="5" y="35" width="190" height="18" fill="url(#pkGrad)" rx="3"/>
+    <text x="10" y="48" class="column-name">job_history_id</text>
+    <text x="140" y="48" class="column-type">INT</text>
+    <text x="175" y="48" class="pk-label">PK</text>
+    <rect x="5" y="55" width="190" height="18" fill="url(#fkGrad)" rx="3"/>
+    <text x="10" y="68" class="column-name">employee_id</text>
+    <text x="140" y="68" class="column-type">INT</text>
+    <text x="175" y="68" class="fk-label">FK</text>
+    <text x="10" y="88" class="column-name">years_at_company</text>
+    <text x="140" y="88" class="column-type">TINYINT</text>
+    <text x="10" y="108" class="column-name">years_in_current_role</text>
+    <text x="140" y="108" class="column-type">TINYINT</text>
+    <text x="10" y="128" class="column-name">years_since_promo</text>
+    <text x="140" y="128" class="column-type">TINYINT</text>
+    <text x="10" y="148" class="column-name">years_with_manager</text>
+    <text x="140" y="148" class="column-type">TINYINT</text>
+    <text x="10" y="168" class="column-name">job_level</text>
+    <text x="140" y="168" class="column-type">TINYINT</text>
+  </g>
+  
+  <!-- Satisfaction Table -->
+  <g transform="translate(720, 680)" filter="url(#shadow)">
+    <rect width="210" height="180" rx="8" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+    <rect width="210" height="28" rx="8" fill="url(#headerGrad)"/>
+    <rect y="20" width="210" height="8" fill="url(#headerGrad)"/>
+    <text x="105" y="19" text-anchor="middle" class="table-header">Satisfaction</text>
+    <rect x="5" y="35" width="200" height="18" fill="url(#pkGrad)" rx="3"/>
+    <text x="10" y="48" class="column-name">satisfaction_id</text>
+    <text x="150" y="48" class="column-type">INT</text>
+    <text x="185" y="48" class="pk-label">PK</text>
+    <rect x="5" y="55" width="200" height="18" fill="url(#fkGrad)" rx="3"/>
+    <text x="10" y="68" class="column-name">employee_id</text>
+    <text x="150" y="68" class="column-type">INT</text>
+    <text x="185" y="68" class="fk-label">FK</text>
+    <text x="10" y="88" class="column-name">environment_satisfaction</text>
+    <text x="150" y="88" class="column-type">TINYINT</text>
+    <text x="10" y="108" class="column-name">job_satisfaction</text>
+    <text x="150" y="108" class="column-type">TINYINT</text>
+    <text x="10" y="128" class="column-name">relationship_satisfaction</text>
+    <text x="150" y="128" class="column-type">TINYINT</text>
+    <text x="10" y="148" class="column-name">work_life_balance</text>
+    <text x="150" y="148" class="column-type">TINYINT</text>
+    <text x="10" y="168" class="column-name">performance_rating</text>
+    <text x="150" y="168" class="column-type">TINYINT</text>
+  </g>
+  
+  <!-- Relationship Lines -->
+  <!-- Department to Employee -->
+  <line x1="170" y1="260" x2="170" y2="310" stroke="#666" stroke-width="2"/>
+  <line x1="170" y1="310" x2="400" y2="310" stroke="#666" stroke-width="2"/>
+  <line x1="400" y1="310" x2="400" y2="350" stroke="#666" stroke-width="2"/>
+  <text x="165" y="280" class="relation-label">1</text>
+  <text x="395" y="340" class="relation-label">M</text>
+  
+  <!-- JobRole to Employee -->
+  <line x1="440" y1="260" x2="440" y2="300" stroke="#666" stroke-width="2"/>
+  <line x1="440" y1="300" x2="490" y2="300" stroke="#666" stroke-width="2"/>
+  <line x1="490" y1="300" x2="490" y2="350" stroke="#666" stroke-width="2"/>
+  <text x="435" y="280" class="relation-label">1</text>
+  <text x="485" y="340" class="relation-label">M</text>
+  
+  <!-- Education to Employee -->
+  <line x1="710" y1="280" x2="710" y2="310" stroke="#666" stroke-width="2"/>
+  <line x1="710" y1="310" x2="580" y2="310" stroke="#666" stroke-width="2"/>
+  <line x1="580" y1="310" x2="580" y2="350" stroke="#666" stroke-width="2"/>
+  <text x="705" y="295" class="relation-label">1</text>
+  <text x="575" y="340" class="relation-label">M</text>
+  
+  <!-- Employee to Compensation -->
+  <line x1="400" y1="630" x2="400" y2="660" stroke="#666" stroke-width="2"/>
+  <line x1="400" y1="660" x2="180" y2="660" stroke="#666" stroke-width="2"/>
+  <line x1="180" y1="660" x2="180" y2="680" stroke="#666" stroke-width="2"/>
+  <text x="395" y="650" class="relation-label">1</text>
+  <text x="185" y="675" class="relation-label">1</text>
+  
+  <!-- Employee to JobHistory -->
+  <line x1="490" y1="630" x2="490" y2="680" stroke="#666" stroke-width="2"/>
+  <text x="485" y="650" class="relation-label">1</text>
+  <text x="495" y="675" class="relation-label">1</text>
+  
+  <!-- Employee to Satisfaction -->
+  <line x1="580" y1="630" x2="580" y2="660" stroke="#666" stroke-width="2"/>
+  <line x1="580" y1="660" x2="825" y2="660" stroke="#666" stroke-width="2"/>
+  <line x1="825" y1="660" x2="825" y2="680" stroke="#666" stroke-width="2"/>
+  <text x="575" y="650" class="relation-label">1</text>
+  <text x="830" y="675" class="relation-label">1</text>
+  
+  <!-- Relationship Summary Box -->
+  <g transform="translate(980, 180)">
+    <rect width="380" height="200" rx="8" fill="white" stroke="#E5E7EB" filter="url(#shadow)"/>
+    <rect width="380" height="28" rx="8" fill="#F3F4F6"/>
+    <rect y="20" width="380" height="8" fill="#F3F4F6"/>
+    <text x="190" y="19" text-anchor="middle" class="column-name" font-weight="bold">Relationship Summary</text>
+    <text x="15" y="50" class="column-name">• Department → Employee: 1:M (One-to-Many)</text>
+    <text x="15" y="70" class="column-name">• JobRole → Employee: 1:M (One-to-Many)</text>
+    <text x="15" y="90" class="column-name">• Education → Employee: 1:M (One-to-Many)</text>
+    <text x="15" y="115" class="column-name">• Employee → Compensation: 1:1 (One-to-One)</text>
+    <text x="15" y="135" class="column-name">• Employee → JobHistory: 1:1 (One-to-One)</text>
+    <text x="15" y="155" class="column-name">• Employee → Satisfaction: 1:1 (One-to-One)</text>
+    <line x1="15" y1="170" x2="365" y2="170" stroke="#E5E7EB"/>
+    <text x="15" y="190" class="column-type">Total Tables: 7 | Normalized to 3NF</text>
+  </g>
+  
+  <!-- Normalization Info Box -->
+  <g transform="translate(980, 420)">
+    <rect width="380" height="130" rx="8" fill="white" stroke="#E5E7EB" filter="url(#shadow)"/>
+    <rect width="380" height="28" rx="8" fill="#DBEAFE"/>
+    <rect y="20" width="380" height="8" fill="#DBEAFE"/>
+    <text x="190" y="19" text-anchor="middle" class="column-name" font-weight="bold">Normalization (3NF)</text>
+    <text x="15" y="50" class="column-name">✓ 1NF: Atomic values, unique rows</text>
+    <text x="15" y="70" class="column-name">✓ 2NF: No partial dependencies</text>
+    <text x="15" y="90" class="column-name">✓ 3NF: No transitive dependencies</text>
+    <text x="15" y="115" class="column-type">Lookup tables eliminate data redundancy</text>
+  </g>
+  
+  <!-- Footer -->
+  <text x="700" y="885" text-anchor="middle" class="subtitle">IBM HR Analytics Employee Attrition &amp; Performance | DB Analyst Documentation</text>
+</svg>
